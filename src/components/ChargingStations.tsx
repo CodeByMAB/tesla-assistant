@@ -24,7 +24,7 @@ interface ChargingStation {
 const stations: ChargingStation[] = [
   {
     name: 'Pine Ridge Road',
-    address: 'Naples, FL 34109',
+    address: '',
     stalls: 16,
     maxKw: 250,
     rates: {
@@ -33,14 +33,14 @@ const stations: ChargingStation[] = [
       hours: 'Off-peak: 12-4am, 4-8am | Peak: 8am-10pm'
     },
     tips: [
-      'Best overall value in Naples',
+      'Best overall value',
       'Most stalls - lower wait times',
-      'Near Whole Foods for shopping'
+      'Near shopping'
     ]
   },
   {
     name: 'Tarpon Bay Boulevard',
-    address: 'Naples, FL 34119',
+    address: '',
     stalls: 8,
     maxKw: 250,
     rates: {
@@ -56,7 +56,7 @@ const stations: ChargingStation[] = [
   },
   {
     name: 'Premier Way',
-    address: 'Naples, FL 34109',
+    address: '',
     stalls: 12,
     maxKw: 250,
     rates: {
@@ -72,7 +72,7 @@ const stations: ChargingStation[] = [
   },
   {
     name: 'Bayfront Place',
-    address: '499 Bayfront Place, Naples',
+    address: '',
     stalls: 8,
     maxKw: 150,
     rates: {
@@ -83,7 +83,7 @@ const stations: ChargingStation[] = [
     tips: [
       'Older station - 150kW max',
       'Scenic waterfront location',
-      'Combine with bayfront dining'
+      'Combine with dining'
     ]
   }
 ]
@@ -126,7 +126,7 @@ function ChargingStations() {
       <div className="status-bar">
         <div>
           <div className="status-time">{currentTimeStr}</div>
-          <div style={{ fontSize: '12px', color: 'var(--tesla-gray)' }}>Naples, FL</div>
+          <div style={{ fontSize: '12px', color: 'var(--tesla-gray)' }}>Local Time</div>
         </div>
         <div className={`status-badge ${isPeakHour ? 'peak' : 'off-peak'}`}>
           {isPeakHour ? <Zap size={14} /> : <PlugZap size={14} />}
@@ -199,13 +199,13 @@ function ChargingStations() {
         
         <div className="station-pricing" style={{ border: 'none', paddingTop: 0 }}>
           <div className="price-block">
-            <div className="price-label">LCEC Rate</div>
+            <div className="price-label">Home Rate</div>
             <div className="price-value low">$0.12-0.14</div>
           </div>
           <div className="price-block">
             <div className="price-label">Per kWh</div>
             <div style={{ fontSize: '12px', color: 'var(--tesla-gray)', marginTop: '4px' }}>
-              Always cheapest option
+              Usually cheapest option
             </div>
           </div>
         </div>

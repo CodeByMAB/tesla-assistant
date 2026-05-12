@@ -31,19 +31,17 @@
 | Unsafe Following Time | Following distance < 1.3s | 7.2% |
 | Late Night Driving | 10pm-12am (weighted), 12am-4am (heavier) | 15% |
 
-### 2. Charging Optimizer (MVP: Naples, FL)
-- List of Tesla Superchargers in Naples area with pricing
+### 2. Charging Optimizer (MVP: Local Area)
+- List of Tesla Superchargers with pricing
 - Time-of-use electricity rate context
 - Best times to charge (supercharger vs home)
 - Weather-aware range recommendations
 
-**Naples Superchargers:**
+**Supercharger Rates (Example):**
 | Location | Stalls | Max kW | Off-Peak Rate | Peak Rate |
 |----------|--------|--------|---------------|-----------|
-| Pine Ridge Rd | 16 | 250kW | $0.32/kWh (12-4am, 4-8am) | $0.40/kWh (8am-10pm) |
-| Tarpon Bay Blvd | 8 | 250kW | $0.35/kWh (12-4am, 10pm-12am) | $0.55/kWh (8am-10pm) |
-| Premier Way | 12 | 250kW | $0.35/kWh (11pm-12am, 4-11am) | $0.40/kWh |
-| Bayfront | 8 | 150kW | Standard rates | Standard rates |
+| Station A | 16 | 250kW | $0.32/kWh | $0.40/kWh |
+| Station B | 8 | 250kW | $0.35/kWh | $0.55/kWh |
 
 ### 3. Product Recommendations
 - Curated list of accessories that actually impact driving score/ownership

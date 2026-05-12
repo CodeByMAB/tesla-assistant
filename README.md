@@ -5,7 +5,7 @@ A mobile-first PWA for Tesla owners to track Safety Score, optimize charging, an
 ## Features
 
 - **Safety Score Tracker** - Monitor your Tesla Safety Score v2.2 with factor breakdown
-- **Charging Optimizer** - Naples, FL Supercharger locations with real-time pricing
+- **Charging Optimizer** - Supercharger locations with real-time pricing
 - **Product Recommendations** - Curated Tesla accessories by impact level
 
 ## Tech Stack
