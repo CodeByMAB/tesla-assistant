@@ -5,8 +5,10 @@ import {
   Plug,
   Home,
   TrendingUp,
-  PlugZap
+  PlugZap,
+  Calculator
 } from 'lucide-react'
+import ChargingCalculator from './ChargingCalculator'
 
 interface ChargingStation {
   name: string
@@ -90,6 +92,7 @@ const stations: ChargingStation[] = [
 
 function ChargingStations() {
   const [currentHour, setCurrentHour] = useState(new Date().getHours())
+  const [showCalculator, setShowCalculator] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -227,6 +230,18 @@ function ChargingStations() {
           manually update your score above.
         </div>
       </div>
+
+      {/* Calculator Toggle */}
+      <button 
+        className="btn btn-secondary" 
+        onClick={() => setShowCalculator(!showCalculator)}
+        style={{ width: '100%', marginTop: '8px' }}
+      >
+        <Calculator size={16} />
+        {showCalculator ? 'Hide Calculator' : 'Show Charging Calculator'}
+      </button>
+
+      {showCalculator && <ChargingCalculator />}
     </div>
   )
 }

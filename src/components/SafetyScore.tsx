@@ -10,8 +10,10 @@ import {
   Save,
   X,
   Car,
-  Timer
+  Timer,
+  History
 } from 'lucide-react'
+import ScoreHistory from './ScoreHistory'
 
 interface SafetyFactor {
   name: string
@@ -84,6 +86,7 @@ function getFactorStatus(value: number, cap: number): string {
 }
 
 function SafetyScore() {
+  const [showHistory, setShowHistory] = useState(false)
   const [scoreData, setScoreData] = useState<SafetyScoreData>(() => {
     const saved = localStorage.getItem('tesla-safety-score')
     if (saved) {
@@ -230,6 +233,18 @@ function SafetyScore() {
           <span>Avoid driving between 12am-4am when possible</span>
         </div>
       </div>
+
+      {/* History Toggle */}
+      <button 
+        className="btn btn-secondary" 
+        onClick={() => setShowHistory(!showHistory)}
+        style={{ width: '100%', marginTop: '8px' }}
+      >
+        <History size={16} />
+        {showHistory ? 'Hide History' : 'Show Score History'}
+      </button>
+
+      {showHistory && <ScoreHistory />}
     </div>
   )
 }
