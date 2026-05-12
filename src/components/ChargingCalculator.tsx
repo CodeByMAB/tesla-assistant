@@ -1,11 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Calculator, Zap, DollarSign, Clock } from 'lucide-react'
 
-function ChargingCalculator() {
-  const [batterySize, setBatterySize] = useState(82) // kWh (Model Y LR)
+function ChargingCalculator({ defaultBatterySize }: { defaultBatterySize?: number }) {
+  const [batterySize, setBatterySize] = useState(defaultBatterySize || 82) // kWh (Model Y LR)
   const [currentSoc, setCurrentSoc] = useState(20) // %
   const [targetSoc, setTargetSoc] = useState(80) // %
   const [electricityRate, setElectricityRate] = useState(0.13) // $/kWh
+
+  // Update battery size when vehicle changes
+  useEffect(() => {
+    if (defaultBatterySize) {
+      setBatterySize(defaultBatterySize)
+    }
+  }, [defaultBatterySize])
 
   const kwhNeeded = (batterySize * (targetSoc - currentSoc) / 100)
   const estimatedCost = kwhNeeded * electricityRate

@@ -90,7 +90,7 @@ const stations: ChargingStation[] = [
   }
 ]
 
-function ChargingStations() {
+function ChargingStations({ vehicleBatterySize }: { vehicleBatterySize?: number }) {
   const [currentHour, setCurrentHour] = useState(new Date().getHours())
   const [showCalculator, setShowCalculator] = useState(false)
 
@@ -241,7 +241,7 @@ function ChargingStations() {
         {showCalculator ? 'Hide Calculator' : 'Show Charging Calculator'}
       </button>
 
-      {showCalculator && <ChargingCalculator />}
+      {showCalculator && <ChargingCalculator defaultBatterySize={vehicleBatterySize} />}
     </div>
   )
 }
